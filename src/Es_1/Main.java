@@ -3,7 +3,6 @@ package Es_1;
 import org.slf4j.LoggerFactory;
 
 import java.util.HashSet;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import org.slf4j.Logger;
@@ -15,7 +14,6 @@ public class Main {
 
     static HashSet<String> words = new HashSet<>();
     static HashSet<String> duplicated = new HashSet<>();
-    static HashSet<String> unique = new HashSet<>();
 
     static int n = 0;
     static String parola;
@@ -48,7 +46,6 @@ public class Main {
                 duplicated.clear();
             } catch (Exception e) {
                 System.out.println(e.getMessage());
-                continue;
             }
         }
     }
@@ -65,8 +62,7 @@ public class Main {
     }
 
     public static void uniqueWords() {
-        if (!duplicated.isEmpty()) {
-            words.removeAll(duplicated);
+        if (!words.isEmpty()) {
             logger.debug("Il numero delle parole distinte sono: {}", words.size());
             logger.debug("L'elenco delle parole è {}", words);
         } else {
